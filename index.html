@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Doctors for PICTians</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    h1,
+    .h1 {
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      line-height: 1.2;
+      font-size: 2.5rem;
+    }
+
+    .display-1 {
+      font-size: 4rem;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .container {
+      width: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    @media (min-width: 992px) {
+      .container {
+        max-width: 960px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .container {
+        max-width: 1140px;
+      }
+    }
+
+    @media (min-width: 576px) {
+      .container {
+        max-width: 540px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        max-width: 720px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .container {
+        max-width: 960px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .container {
+        max-width: 1140px;
+      }
+    }
+
+    .row {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      margin-right: -15px;
+      margin-left: -15px;
+    }
+
+    .col-sm-1 {
+      position: relative;
+      width: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+
+    .col {
+      -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    @media (min-width: 576px) {
+      .col-sm {
+        -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        min-width: 0;
+        max-width: 100%;
+      }
+
+      .col-sm-1 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+      }
+    }
+
+    .btn {
+      text-align: center;
+      border: 1px solid transparent;
+      font-size: 1rem;
+      border-radius: 5rem;
+    }
+
+    .btn:hover {
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      color: #fff;
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+
+    .navbar {
+      position: relative;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      padding: 0.5rem 1rem;
+    }
+
+    .navbar-brand {
+      display: inline-block;
+      padding-top: 0.3125rem;
+      padding-bottom: 0.3125rem;
+      margin-right: 1rem;
+      font-size: 1.25rem;
+      line-height: inherit;
+      white-space: nowrap;
+    }
+
+    .navbar-light .navbar-brand {
+      color: rgba(0, 0, 0, 0.9);
+    }
+
+    .text-primary {
+      color: #007bff !important;
+    }
+
+    body {
+      font-family: "Source Sans Pro", sans-serif;
+      line-height: 1.5;
+      color: #343531;
+    }
+
+    a {
+      color: #07be94;
+      text-decoration: none;
+      background-color: transparent;
+    }
+
+    a:hover {
+      color: #03a882;
+      text-decoration: underline;
+    }
+
+    .text-sm {
+      font-size: 14px !important;
+    }
+
+    .bg-primary {
+      background-color: #00D9A5 !important;
+    }
+
+    a.bg-primary:hover,
+    a.bg-primary:focus {
+      background-color: #07be94 !important;
+    }
+
+    .bg-light {
+      background-color: #F5F9F6 !important;
+    }
+
+    .text-primary {
+      color: #00D9A5 !important;
+    }
+
+    .btn-primary {
+      color: rgb(0, 0, 0);
+      background-color: #00D9A5;
+      border-color: transparent;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      color: #fff;
+      background-color: #4030ec;
+      border-color: transparent;
+    }
+
+    .topbar {
+      border-bottom: 1px solid #E8EEE4;
+    }
+
+    .topbar .site-info a:hover {
+      text-decoration: none;
+      color: rgb(0, 0, 0)
+    }
+
+    .btn {
+      padding: 10px 24px;
+    }
+
+    .navbar {
+      min-height: 70px;
+    }
+
+    .navbar-brand {
+      font-weight: 600;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    .img-place>img {
+      width: 150%;
+      height: 150%;
+    }
+
+    .bg-image {
+      position: relative;
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .page-section {
+      position: relative;
+      padding-top: 80px;
+      padding-bottom: 80px;
+      overflow: hidden;
+    }
+
+    .page-hero {
+      position: relative;
+      height: 550px;
+      z-index: 10;
+    }
+
+    .page-hero.overlay-dark::before,
+    .page-banner.overlay-dark::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(176, 209, 205, 0.7);
+      z-index: 1;
+    }
+
+    .hero-section {
+      position: relative;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      height: 100%;
+      color: #000000;
+      z-index: 10;
+    }
+
+    .hero-section .subhead {
+      text-transform: uppercase;
+      letter-spacing: 7px;
+    }
+
+    .hero-section h1 {
+      margin-bottom: 38px;
+    }
+
+    .custom-img-1 {
+      width: auto;
+      max-width: 390px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="topbar">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-1 text-sm">
+            <div class="site-info">
+              <a> Contact Us: PICTdoctors@gmail.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="#"><span class="text-primary">Healthy</span>-ELLITES</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="page-hero bg-image overlay-dark" style="background-image: url(bg_image_1.jpeg);">
+    <div class="hero-section">
+      <div>
+        <span class="subhead">Let's help you find the doctor</span>
+        <h1 class="display-1">Health is Wealth</h1>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+    </div>
+  </div>
+
+
+  <div class="bg-light">
+    <div class="page-section pb-0">
+      <div class="container">
+        <div class="row align-items-center">
+          <div>
+            <h1>Welcome to Our Website</h1>
+            <p class="text-grey mb-4">
+            </p>
+            <a href="aboutus.html" class="btn btn-primary">About Us</a>
+          </div>
+          <div>
+            <div class="img-place custom-img-1">
+              <img src="bg-doctor.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-section">
+    <div class="container">
+      <div>
+        <h1>Our Doctors</h1>
+        <div class="dropdown">
+          <a href="General_info.html" class="btn btn-primary">General</a>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="dropdown">
+          <a href="ENT_info.html" class="btn btn-primary">ENT</a>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="dropdown">
+          <a href="Eye_info.html" class="btn btn-primary">EYE CARE</a>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="dropdown">
+          <a href="skin.html" class="btn btn-primary">Skin Care</a>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <div class="dropdown">
+          <a href="Dental_info.html" class="btn btn-primary">Dental</a>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>
